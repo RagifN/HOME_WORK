@@ -57,8 +57,8 @@ async def edit_user(user_id: int, new_user: UserIn):
     for i in range(0, len(users)):
         if users[i].id == user_id:
             current_user = users[user_id - 1]
-            current_user.name = new_user.title
-            current_user.surname = new_user.description
+            current_user.name = new_user.name
+            current_user.surname = new_user.surname
             return current_user
     raise HTTPException(status_code=404, detail='User not found')
 
